@@ -86,68 +86,64 @@ export default function Home() {
               )}
             </Button>
           </div>
-          <div className="relative flex-1 w-full max-w-[700px]" style={{ height: '400px' }}>
-            {/* Top Interface Boxes - only show when currentStep >= 1 */}
-            {currentStep >= 1 && (
-              <>
-                <div className={`absolute left-[60px] top-[30px] w-[150px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>Servlet</div>
-                <div className={`absolute left-[230px] top-[30px] w-[150px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>ServletConfig</div>
-                <div className={`absolute left-[400px] top-[30px] w-[150px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>Serialization</div>
-              </>
-            )}
+  <div className="relative flex-1 w-full max-w-[700px] mx-auto gap-2"  style={{ height: '400px' }}>
+  {/* Use responsive breakpoints for absolute positions */}
+  {currentStep >= 1 && (
+    <>
+      <div className={`absolute left-[10%] top-[5%] w-[30%] min-w-[100px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>Servlet</div>
+      <div className={`absolute left-[40%] top-[5%] w-[30%] min-w-[100px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>ServletConfig</div>
+      <div className={`absolute left-[85%] top-[5%] w-[30%] min-w-[100px] h-[50px] transform -translate-x-[50%] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>Serialization</div>
+    </>
+  )}
 
-            {/* GenericServlet Box - show when currentStep >= 2 */}
-            {currentStep >= 2 && (
-              <div className={`absolute left-[160px] top-[150px] w-[320px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>GenericsServlet</div>
-            )}
+  {currentStep >= 2 && (
+    <div className={`absolute left-1/2 top-[35%] w-[80%] max-w-[320px] transform -translate-x-1/2 h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>GenericsServlet</div>
+  )}
 
-            {/* HttpServlet Box - show when currentStep >= 4 */}
-            {currentStep >= 4 && (
-              <div className={`absolute left-[160px] top-[250px] w-[320px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>HttpServlet</div>
-            )}
+  {currentStep >= 4 && (
+    <div className={`absolute left-1/2 top-[60%] w-[80%] max-w-[320px] transform -translate-x-1/2 h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>HttpServlet</div>
+  )}
 
-            {/* UserDefinedServlet Box - show when currentStep >= 6 */}
-            {currentStep >= 6 && (
-              <div className={`absolute left-[160px] top-[350px] w-[320px] h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>UserDefinedServlet</div>
-            )}
+  {currentStep >= 6 && (
+    <div className={`absolute left-1/2 top-[85%] w-[80%] max-w-[320px] transform -translate-x-1/2 h-[50px] flex items-center justify-center border rounded-lg ${isDark ? 'bg-gray-800 border-gray-600' : 'bg-background'} font-medium shadow-sm animate-in fade-in duration-500`}>UserDefinedServlet</div>
+  )}
 
-            {/* Arrow from GenericServlet to HttpServlet - show when currentStep >= 5 */}
-            {currentStep >= 5 && (
-              <svg className="absolute left-[310px] top-[200px]" width="20" height="60">
-                <line x1="10" y1="0" x2="10" y2="50" stroke={isDark ? "#fff" : "#000"} strokeWidth="4" />
-                <polygon points="4,50 16,50 10,58" fill={isDark ? "#fff" : "#000"} />
-              </svg>
-            )}
+  {/* Arrows with responsive alignment */}
+  {currentStep >= 5 && (
+    <svg className="absolute left-1/2 top-[47%] transform -translate-x-1/2" width="20" height="60">
+      <line x1="10" y1="0" x2="10" y2="50" stroke={isDark ? "#fff" : "#000"} strokeWidth="4" />
+      <polygon points="4,50 16,50 10,58" fill={isDark ? "#fff" : "#000"} />
+    </svg>
+  )}
 
-            {/* Arrow from HttpServlet to UserDefinedServlet - show when currentStep >= 7 */}
-            {currentStep >= 7 && (
-              <svg className="absolute left-[310px] top-[300px]" width="20" height="60">
-                <line x1="10" y1="0" x2="10" y2="50" stroke={isDark ? "#fff" : "#000"} strokeWidth="4" />
-                <polygon points="4,50 16,50 10,58" fill={isDark ? "#fff" : "#000"} />
-              </svg>
-            )}
+  {currentStep >= 7 && (
+    <svg className="absolute left-1/2 top-[72%] transform -translate-x-1/2" width="20" height="60">
+      <line x1="10" y1="0" x2="10" y2="50" stroke={isDark ? "#fff" : "#000"} strokeWidth="4" />
+      <polygon points="4,50 16,50 10,58" fill={isDark ? "#fff" : "#000"} />
+    </svg>
+  )}
 
-            {/* Dotted Arrows from Interface boxes to GenericServlet - show when currentStep >= 3 */}
-            {currentStep >= 3 && (
-              <>
-                {/* Servlet -> GenericServlet */}
-                <svg className="absolute left-[188px] top-[80px]" width="20" height="90">
-                  <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
-                  <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
-                </svg>
-                {/* ServletConfig -> GenericServlet */}
-                <svg className="absolute left-[305px] top-[80px]" width="20" height="90">
-                  <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
-                  <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
-                </svg>
-                {/* Serialization -> GenericServlet */}
-                <svg className="absolute left-[397px] top-[80px]" width="20" height="90">
-                  <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
-                  <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
-                </svg>
-              </>
-            )}
-          </div>
+  {currentStep >= 3 && (
+    <>
+      {/* Servlet -> GenericServlet */}
+      <svg className="absolute left-[30%] top-[17%]" width="20" height="150">
+        <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
+        <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
+      </svg>
+      {/* ServletConfig -> GenericServlet */}
+      <svg className="absolute left-[50%] top-[17%] transform -translate-x-1/2" width="20" height="90">
+        <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
+        <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
+      </svg>
+      {/* Serialization -> GenericServlet */}
+      <svg className="absolute left-[71%] top-[17%]" width="20" height="90">
+        <line x1="10" y1="0" x2="10" y2="70" stroke={isDark ? "#9ca3af" : "#666"} strokeWidth="4" strokeDasharray="4 4" />
+        <polygon points="4,70 16,70 10,78" fill={isDark ? "#9ca3af" : "#666"} />
+      </svg>
+    </>
+  )}
+</div>
+
         </main>
       </div>
     </div>
