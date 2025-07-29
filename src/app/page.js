@@ -87,6 +87,16 @@ export default function Home() {
             </Button>
           </div>
   <div className="relative flex-1 w-full max-w-[700px] mx-auto gap-2"  style={{ height: '400px' }}>
+  {/* Initial message */}
+  {currentStep === 0 && (
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className={`text-center p-8 rounded-lg  ${isDark ? 'border-gray-600 text-gray-300' : 'border-gray-300 text-gray-600'}`}>
+        
+        <p className="text-lg">Click on <strong>Start</strong> to see the servlet hierarchy</p>
+      </div>
+    </div>
+  )}
+  
   {/* Use responsive breakpoints for absolute positions */}
   {currentStep >= 1 && (
     <>
